@@ -35,12 +35,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"/>
 
+    <EditText
+        android:id="@+id/etLado1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Lado 1"
+        app:layout_constraintTop_toBottomOf="@+id/etAltura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/etLado2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Lado 2"
+        app:layout_constraintTop_toBottomOf="@+id/etLado1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
     <Button
         android:id="@+id/btnCalculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calcular Área"
-        app:layout_constraintTop_toBottomOf="@+id/etAltura"
+        app:layout_constraintTop_toBottomOf="@+id/etLado2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"/>
@@ -55,16 +75,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"/>
-    <EditText
-        android:id="@+id/etLado1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Lado 1" />
-
-    <EditText
-        android:id="@+id/etLado2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Lado 2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
