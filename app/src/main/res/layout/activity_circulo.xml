@@ -4,34 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/et_radio"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Radio"
-        android:inputType="numberDecimal"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp" />
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/btn_calcular"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Calcular"
-        app:layout_constraintTop_toBottomOf="@id/et_radio"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp" />
+        <EditText
+            android:id="@+id/et_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Radio"
+            android:inputType="numberDecimal" />
 
-    <TextView
-        android:id="@+id/tv_resultado"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Resultado"
-        app:layout_constraintTop_toBottomOf="@id/btn_calcular"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp" />
+        <Button
+            android:id="@+id/btn_calcular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calcular Área" />
+
+        <TextView
+            android:id="@+id/tv_resultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resultado"
+            android:paddingTop="16dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

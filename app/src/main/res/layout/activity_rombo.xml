@@ -4,56 +4,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/et_diagonalMayor"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Diagonal Mayor"
-        android:inputType="numberDecimal"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/et_diagonalMenor"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Diagonal Menor"
-        android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@id/et_diagonalMayor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp" />
+        <EditText
+            android:id="@+id/et_diagonalMayor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Diagonal mayor"
+            android:inputType="numberDecimal" />
 
-    <EditText
-        android:id="@+id/et_lado"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Lado"
-        android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@id/et_diagonalMenor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp" />
+        <EditText
+            android:id="@+id/et_diagonalMenor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Diagonal menor"
+            android:inputType="numberDecimal" />
 
-    <Button
-        android:id="@+id/btn_calcular"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Calcular"
-        app:layout_constraintTop_toBottomOf="@id/et_lado"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp" />
+        <EditText
+            android:id="@+id/et_lado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Lado"
+            android:inputType="numberDecimal" />
 
-    <TextView
-        android:id="@+id/tv_resultado"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Resultado"
-        app:layout_constraintTop_toBottomOf="@id/btn_calcular"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp" />
+        <Button
+            android:id="@+id/btn_calcular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calcular Área y Perímetro" />
+
+        <TextView
+            android:id="@+id/tv_resultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resultado"
+            android:paddingTop="16dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

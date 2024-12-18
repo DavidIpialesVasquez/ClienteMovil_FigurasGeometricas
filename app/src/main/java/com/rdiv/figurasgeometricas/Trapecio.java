@@ -1,50 +1,47 @@
 package com.rdiv.figurasgeometricas;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-
-
 public class Trapecio extends AppCompatActivity {
-
-    private EditText etBase1, etBase2, etAltura;
-    private TextView tvResult;
+    private EditText base1, base2, altura, lado1, lado2;
+    private TextView resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trapecio);
 
-        etBase1 = findViewById(R.id.etBase1);
-        etBase2 = findViewById(R.id.etBase2);
-        etAltura = findViewById(R.id.etAltura);
-        tvResult = findViewById(R.id.tvResult);
-        Button btnCalculate = findViewById(R.id.btnCalculate);
+        base1 = findViewById(R.id.etBase1);
+        base2 = findViewById(R.id.etBase2);
+        altura = findViewById(R.id.etAltura);
+        lado1 = findViewById(R.id.etLado1);
+        lado2 = findViewById(R.id.etLado2);
+        resultado = findViewById(R.id.tvResult);
+        Button calcular = findViewById(R.id.btnCalculate);
 
-        btnCalculate.setOnClickListener(v -> calculateArea());
-    }
+        calcular.setOnClickListener(v -> {
+            String b1 = base1.getText().toString();
+            String b2 = base2.getText().toString();
+            String h = altura.getText().toString();
+            String l1 = lado1.getText().toString();
+            String l2 = lado2.getText().toString();
 
-    private void calculateArea() {
-        String base1 = etBase1.getText().toString();
-        String base2 = etBase2.getText().toString();
-        String altura = etAltura.getText().toString();
+            String url = "http://10.10.22.233:3000/trapecio/" + b1 + "/" + b2 + "/" + h + "/" + l1 + "/" + l2;
 
-        String url = "http://<TU_IP>:3000/trapecio/" + base1 + "/" + base2 + "/" + altura;
+            RequestQueue queue = Volley.newRequestQueue(this);
+            StringRequest request = new StringRequest(Request.Method.GET, url,
+                    response -> resultado.setText(response),
+                    error -> resultado.setText("Error: " + error.getMessage()));
 
-        RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest request = new StringRequest(Request.Method.GET, url,
-                response -> tvResult.setText(response),
-                error -> tvResult.setText("Error: " + error.getMessage()));
-
-        queue.add(request);
+            queue.add(request);
+        });
     }
 }

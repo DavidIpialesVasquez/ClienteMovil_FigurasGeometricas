@@ -55,4 +55,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"/>
+    <EditText
+        android:id="@+id/etLado1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lado 1" />
+
+    <EditText
+        android:id="@+id/etLado2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lado 2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,18 +1,21 @@
 package com.rdiv.figurasgeometricas;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 public class Circulo extends AppCompatActivity {
     private EditText radio;
     private TextView resultado;
     private Button calcular;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,13 +25,19 @@ public class Circulo extends AppCompatActivity {
         resultado = findViewById(R.id.tv_resultado);
         calcular = findViewById(R.id.btn_calcular);
 
-        calcular.setOnClickListener(v -> {
-            double r = Double.parseDouble(radio.getText().toString());
+        calcular.setOnClickListener(v -> calcularArea());
+    }
 
-            double area = Math.PI * r * r;
-            double perimetro = 2 * Math.PI * r;
+    private void calcularArea() {
+        String r = radio.getText().toString();
 
-            resultado.setText("Área: " + area + "\nPerímetro: " + perimetro);
-        });
+        String url = "http://10.10.22.233:3000/circulo/" + r;
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.GET, url,
+                response -> resultado.setText(response),
+                error -> resultado.setText("Error: " + error.getMessage()));
+
+        queue.add(request);
     }
 }
