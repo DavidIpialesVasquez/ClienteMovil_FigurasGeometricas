@@ -35,7 +35,7 @@ public class Trapecio extends AppCompatActivity {
             String l2 = lado2.getText().toString();
 
             String url = "http://10.10.22.233:3000/trapecio/" + b1 + "/" + b2 + "/" + h + "/" + l1 + "/" + l2;
-            
+
             if (b1.isEmpty() || b2.isEmpty() || h.isEmpty() || l1.isEmpty() || l2.isEmpty()) {
                 resultado.setText("Por favor, completa todos los campos");
                 return;
